@@ -377,7 +377,7 @@ class ReviewViewsList(APIView):
 
     def get_avg_rating(self, product_id):
         revievs_avg = Review.objects.aggregate(Avg('rating')).filter(id=product_id)
-        return
+        return revievs_avg
 
     def get(self, request, *args, **kwargs):
         reviews = self.get_object()
